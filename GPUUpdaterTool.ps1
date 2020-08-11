@@ -61,6 +61,7 @@ Function G4DN {
         Write-host "https://console.aws.amazon.com/iam/home?/security_credentials#/security_credentials" -BackgroundColor Green -ForegroundColor Black
         $accesskey = Get-Content -path C:\Users\Administrator\Downloads\keypartone.txt -Raw
         $secretkey = Get-Content -path C:\Users\Administrator\Downloads\keyparttwo.txt -Raw 
+        Write-Host "accesskey" $accesskey "secret" $secret
         Set-AWSCredentials -AccessKey $accesskey -SecretKey $secretkey -StoreAs $ProfileName
         Write-Host "Save AWS Access Key? - DO NOT do this if you intend to let others access this machine, or create an AMI that others will be able to create instances from" -BackgroundColor Red -ForegroundColor Black
         $ReadHost = "N"
